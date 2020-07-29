@@ -193,5 +193,6 @@ class PrivateRecipeApiTests(TestCase):
         self.assertEqual(recipe.time_minutes, payload['time_minutes'])
         self.assertEqual(recipe.price, payload['price'])
         tags = recipe.tags.all()
-        # Since the payload does not include a tag, there should be no tag remaining
+        # Since the payload does not include a tag,
+        # there should be no tag remaining after the put
         self.assertEqual(len(tags), 0)
